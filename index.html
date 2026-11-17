@@ -1,377 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Comfort Vend Solution | Smart Vending, Better Tomorrow</title>
+<title>Comfort Vend Solution | Smart Vending, Better Tomorrow</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html { scroll-behavior: smooth; }
 
-    body {
-      background: #f7fbfc;
-      color: #222;
-    }
+body {
+  background: #f7fbfc;
+  color: #222;
+}
 
-    /* NAVBAR */
-    nav {
-      background: #063b7a;
-      color: white;
-      padding: 15px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+nav {
+  background: #063b7a;
+  color: white;
+  padding: 15px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
 
-    .logo span {
-      color: #f7941d;
-    }
+.logo span { color: #f7941d; }
 
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
 
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-size: 15px;
-    }
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+}
 
-    /* HERO */
-    .hero {
-      background: linear-gradient(135deg, #063b7a, #00a7c4);
-      color: white;
-      text-align: center;
-      padding: 80px 20px;
-    }
+.hero {
+  background: linear-gradient(135deg, #063b7a, #00a7c4);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
 
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 15px;
-    }
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
 
-    .hero p {
-      font-size: 22px;
-      margin-bottom: 25px;
-    }
+.hero p {
+  font-size: 22px;
+  margin-bottom: 25px;
+}
 
-    .btn {
-      display: inline-block;
-      background: #f7941d;
-      color: white;
-      padding: 14px 25px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-    }
+.btn {
+  display: inline-block;
+  background: #f7941d;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-    /* SECTION */
-    section {
-      padding: 60px 8%;
-    }
+section { padding: 60px 8%; }
 
-    .title {
-      text-align: center;
-      color: #063b7a;
-      font-size: 32px;
-      margin-bottom: 15px;
-    }
+.title {
+  text-align: center;
+  color: #063b7a;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
 
-    .subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 40px;
-    }
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
+}
 
-    /* ABOUT */
-    .about {
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-      font-size: 17px;
-      line-height: 1.8;
-    }
+.about {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.8;
+}
 
-    /* PRODUCTS */
-    .products {
-      background: #eef8fa;
-    }
+.products { background: #eef8fa; }
 
-    .product-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
 
-    .card {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      text-align: center;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
 
-    .card:hover {
-      transform: translateY(-8px);
-    }
+.card:hover { transform: translateY(-8px); }
 
-    .product-icon {
-      font-size: 55px;
-      margin-bottom: 15px;
-    }
+.product-image {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: white;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
 
-    .card h3 {
-      color: #063b7a;
-      margin-bottom: 10px;
-    }
+.card h3 {
+  color: #063b7a;
+  margin-bottom: 10px;
+}
 
-    /* CONTACT */
-    .contact-box {
-      max-width: 750px;
-      margin: auto;
-      background: #063b7a;
-      color: white;
-      padding: 35px;
-      border-radius: 15px;
-      text-align: center;
-      line-height: 2;
-      font-size: 18px;
-    }
+.contact-box {
+  max-width: 750px;
+  margin: auto;
+  background: #063b7a;
+  color: white;
+  padding: 35px;
+  border-radius: 15px;
+  text-align: center;
+  line-height: 2;
+  font-size: 18px;
+}
 
-    .contact-box a {
-      color: white;
-      text-decoration: none;
-    }
+.contact-box a {
+  color: white;
+  text-decoration: none;
+}
 
-    /* WHATSAPP */
-    .whatsapp {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      background: #25D366;
-      color: white;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      font-size: 28px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    }
+.whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 28px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
 
-    footer {
-      background: #042957;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+footer {
+  background: #042957;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
 
-    /* MOBILE */
-    @media (max-width: 700px) {
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    gap: 12px;
+  }
 
-      nav {
-        flex-direction: column;
-        gap: 12px;
-      }
+  nav ul {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-      nav ul {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      section {
-        padding: 45px 20px;
-      }
-    }
-  </style>
+  .hero h1 { font-size: 34px; }
+  .hero p { font-size: 18px; }
+  section { padding: 45px 20px; }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="logo">COMFORT <span>VEND</span> SOLUTION</div>
+<nav>
+  <div class="logo">COMFORT <span>VEND</span> SOLUTION</div>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- HOME -->
-  <section class="hero" id="home">
-    <h1>Comfort Vend Solution</h1>
-    <p>Smart Vending | Better Tomorrow</p>
-    <p>Innovative Solutions for a Hygienic & Better Tomorrow</p>
-
-    <a class="btn"
-       href="https://wa.me/918796036112"
-       target="_blank">
-       Enquire on WhatsApp
-    </a>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <h2 class="title">About Us</h2>
-    <p class="subtitle">Quality Products | Innovative Solutions</p>
-
-    <div class="about">
-      <p>
-        <strong>Comfort Vend Solution</strong> provides innovative and
-        hygienic solutions for homes, offices, schools, hospitals and
-        commercial establishments.
-      </p>
-
-      <br>
-
-      <p>
-        We manufacture quality vending and hygiene-related products
-        designed to make everyday life smarter, cleaner and better.
-      </p>
-
-      <br>
-
-      <p><strong>Founder: Avika</strong></p>
-    </div>
-  </section>
-
-  <!-- PRODUCTS -->
-  <section class="products" id="products">
-
-    <h2 class="title">Our Products</h2>
-
-    <p class="subtitle">
-      We are Manufacturing Innovative Solutions
-    </p>
-
-    <div class="product-grid">
-
-      <div class="card">
-        <div class="product-icon">🧼</div>
-        <h3>Sanitary Napkin Disposal Machine</h3>
-        <p>Safe and hygienic disposal solution.</p>
-      </div>
-
-      <div class="card">
-        <div class="product-icon">🌸</div>
-        <h3>Sanitary Napkin Vending Machine</h3>
-        <p>Easy and convenient sanitary napkin access.</p>
-      </div>
-
-      <div class="card">
-        <div class="product-icon">💧</div>
-        <h3>Water Cooler</h3>
-        <p>Reliable drinking water solutions.</p>
-      </div>
-
-      <div class="card">
-        <div class="product-icon">🗑️</div>
-        <h3>SS Dustbin</h3>
-        <p>Strong and hygienic stainless steel dustbins.</p>
-      </div>
-
-      <div class="card">
-        <div class="product-icon">👞</div>
-        <h3>Shoe Rack</h3>
-        <p>Smart and organized storage solutions.</p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-
-    <h2 class="title">Contact Us</h2>
-
-    <div class="contact-box">
-
-      <p><strong>Comfort Vend Solution</strong></p>
-
-      <p>👩 Founder: Avika</p>
-
-      <p>
-        📍 H No - 5986GF, Sector - 3,<br>
-        Ballabgarh, Faridabad - 121004 (H.R)
-      </p>
-
-      <p>
-        📞
-        <a href="tel:+918796036112">
-          8796036112
-        </a>
-      </p>
-
-      <p>
-        📧
-        <a href="mailto:comfortvendsolution@outlook.com">
-          comfortvendsolution@outlook.com
-        </a>
-      </p>
-
-      <br>
-
-      <a class="btn"
-         href="https://wa.me/918796036112"
-         target="_blank">
-         💬 WhatsApp Us
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- WHATSAPP FLOAT BUTTON -->
-  <a class="whatsapp"
-     href="https://wa.me/918796036112"
-     target="_blank"
-     title="Chat on WhatsApp">
-     💬
+<section class="hero" id="home">
+  <h1>Comfort Vend Solution</h1>
+  <p>Smart Vending | Better Tomorrow</p>
+  <p>Innovative Solutions for a Hygienic & Better Tomorrow</p>
+  <a class="btn" href="https://wa.me/918796036112" target="_blank">
+    Enquire on WhatsApp
   </a>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
+<section id="about">
+  <h2 class="title">About Us</h2>
+  <p class="subtitle">Quality Products | Innovative Solutions</p>
+
+  <div class="about">
     <p>
-      © 2026 Comfort Vend Solution |
-      Smart Vending, Better Tomorrow
+      <strong>Comfort Vend Solution</strong> provides innovative and
+      hygienic solutions for homes, offices, schools, hospitals and
+      commercial establishments.
     </p>
-  </footer>
+    <br>
+    <p>
+      We manufacture quality vending and hygiene-related products
+      designed to make everyday life smarter, cleaner and better.
+    </p>
+    <br>
+    <p><strong>Founder: Avika</strong></p>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <h2 class="title">Our Products</h2>
+  <p class="subtitle">We are Manufacturing Innovative Solutions</p>
+
+  <div class="product-grid">
+
+    <div class="card">
+      <img class="product-image"
+      src="images/sanitary-napkin-vending-machine.jpg"
+      alt="Sanitary Napkin Vending Machine">
+      <h3>Sanitary Napkin Vending Machine</h3>
+      <p>Easy and convenient sanitary napkin access.</p>
+    </div>
+
+    <div class="card">
+      <img class="product-image"
+      src="images/water-cooler.jpg"
+      alt="Water Cooler">
+      <h3>Water Cooler</h3>
+      <p>Reliable drinking water solutions.</p>
+    </div>
+
+    <div class="card">
+      <img class="product-image"
+      src="images/double-dustbin.jpg"
+      alt="Double Dustbin">
+      <h3>SS Double Dustbin</h3>
+      <p>Strong and hygienic stainless steel dustbins.</p>
+    </div>
+
+    <div class="card">
+      <img class="product-image"
+      src="images/shoe-rack.jpg"
+      alt="Shoe Rack">
+      <h3>Shoe Rack</h3>
+      <p>Smart and organized storage solutions.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="title">Contact Us</h2>
+
+  <div class="contact-box">
+    <p><strong>Comfort Vend Solution</strong></p>
+    <p>Founder: Avika</p>
+
+    <p>
+      H No - 5986GF, Sector - 3,<br>
+      Ballabgarh, Faridabad - 121004 (H.R)
+    </p>
+
+    <p>
+      📞 <a href="tel:+918796036112">8796036112</a>
+    </p>
+
+    <p>
+      📧 <a href="mailto:comfortvendsolution@outlook.com">
+      comfortvendsolution@outlook.com</a>
+    </p>
+
+    <br>
+    <a class="btn" href="https://wa.me/918796036112" target="_blank">
+      WhatsApp Us
+    </a>
+  </div>
+</section>
+
+<a class="whatsapp"
+href="https://wa.me/918796036112"
+target="_blank" title="Chat on WhatsApp">💬</a>
+
+<footer>
+  <p>© 2026 Comfort Vend Solution | Smart Vending, Better Tomorrow</p>
+</footer>
 
 </body>
 </html>
